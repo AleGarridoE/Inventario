@@ -1,0 +1,422 @@
+# Inventario
+Inventario Dinamico para la venta de zapatos. Lenguaje Python
+
+---
+title: "__Inventario Dinamico. Proyecto Final__"
+author: "I. F. Alejandra Garrido Espinosa"
+date: "2022-12-05"
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
+subtitle: "__Centro de Investigacion en Matemáticas. Unidad Monterrey__"
+---
+
+  
+  
+>**Introducción**    
+
+Una matriz es un arreglo de números en filas y columnas. Cada número dentro de una matriz corresponde a un elemento o entrada. Las dimensiones de una matriz es el número dado de filas y columnas en la matriz en ese orden.  
+
+Siempre y cuando las dimensiones de las matrices sean las mismas, es posible realizar las operaciones de suma y resta, que se llevan a cabo entrada por entrada.   
+
+La aplicación de las matrices tiene un rol crucial en casi todos los campos de las ciencias exactas, ya que permite el planteamiento y solución de sistemas de ecuaciones lineales.  
+
+El inventario de los productos de una compañía puede ser planteado como un sistema de matrices, ya que cada producto tiene multiples atributos, como el tamaño, color, peso, talla, costo, material, procesos de acabado y empaquetamiento, por ejemplo.   Un sistema bidimensional o tridimiencional podría representar todas las configuraciones posibles para el inventario de productos de una compañia. 
+
+Un sistema de inventario matricial simplifica el manejo de entradas y salidas de los productos en tiempo real, al permitir que cada atribo del producto sea asignado a las filas y columnas de una matriz.   
+
+El empleo de invendatios dinámicos requiere de el uso de algorimos computacionales que permita modificar en tiempo real las entradas de las matrices. Mediante el uso de recursos computacionales se optimiza la gestion de los productos de una compañía.  
+
+
+
+>**Justificación**
+
+Un inventario dinámico permite introducir los productos en sistemas matriciales. Mediante la compra y venta de productos se lleva a cabo la suma y resta de matrices. Al asignar precios a lo productos y por medio la compra de productos se puede llevar a cabo la multiplicacion de escales. 
+
+El inventario de una tienda de zapatos permite la asignacion de variables a los renglones y columnas de cada matriz. Siendo así cada entrada de cada matriz un producto diferente. 
+
+El resumen del inventario permite ver el estado de las matrices antes y despues de la compra de productos y la adquicicion de zapatos por parte de los proveedores. El inventario de los productos permite ver si efectivamente se realizaron las operaciones seleccionadas. 
+
+
+>**Objetivo**
+
+Desarrollar un algoritmo que permita crear y modificar un inventario de productos usando Python como lenguaje de programación.
+
+
+>**Método**
+
+El algoritmo se escribirá usando el lenguaje de programación Python y se usará Atom como editor de código fuente. Una vez finalizado se adjuntará en el presente documento.
+
+Para comenzar, definimos los sistemas matriciales que serán el esqueleto del inventario. Los modelos de zapatos conformaran las matrices de nuestro sistema, luego los colores de cada modelo serán los vectores columna y finalmente las tallas de los modelos de zapatos serán los renglones de nuestas matrices. 
+
+Comenzaremos la base de datos con 5 pares correspondinte por talla y color. Así el inventario inicial quedará como se muestra a continuación. 
+
+
+                    
+#### Modelo: Zapatos
+Talla/Color   | Azul          | Negro         | Cafe        
+:-----------: | :-----------: | :-----------: | :-----------:
+Talla 24      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 25      | 5 unidades    | 5 unidades    | 5 unidades     
+Talla 26      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 27      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 28      | 5 unidades    | 5 unidades    | 5 unidades      
+
+#### Modelo: Bota
+Talla/Color   | Azul          | Negro         | Cafe        
+:-----------: | :-----------: | :-----------: | :-----------:
+Talla 24      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 25      | 5 unidades    | 5 unidades    | 5 unidades     
+Talla 26      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 27      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 28      | 5 unidades    | 5 unidades    | 5 unidades     
+
+#### Modelo: Sandalia
+Talla/Color   | Azul          | Negro         | Cafe        
+:-----------: | :-----------: | :-----------: | :-----------:
+Talla 24      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 25      | 5 unidades    | 5 unidades    | 5 unidades     
+Talla 26      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 27      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 28      | 5 unidades    | 5 unidades    | 5 unidades     
+
+#### Modelo: Tenis
+Talla/Color   | Azul          | Negro         | Cafe        
+:-----------: | :-----------: | :-----------: | :-----------:
+Talla 24      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 25      | 5 unidades    | 5 unidades    | 5 unidades     
+Talla 26      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 27      | 5 unidades    | 5 unidades    | 5 unidades    
+Talla 28      | 5 unidades    | 5 unidades    | 5 unidades     
+
+
+
+Ahora definimos los menús para cada usuario del programa.
+
+
+#### Menu principal
+| Opcion            
+| :--------- 
+| 1. Cliente         
+| 2. Provedor       
+| 3. Administrador
+| 4. Salir
+
+#### Menu principal
+| Opcion            
+| :--------- 
+| 1. Cliente         
+| 2. Provedor       
+| 3. Administrador
+| 4. Salir
+
+
+Al seleccionar la opción de cliente, se llevará a cabo la suma de matrices, cada vez que el usuario desee ingresar un producto a comprar. Así mismo al seleccionar la opción proveedor, se llevará a cabo una resta de matrices cada vez que el usuario ingrese un nuevo producto al inventario. 
+
+La multiplicación de escalares se llevará acabo multiplicando el número de pares de zapatos por el costo del modelo del producto. 
+
+Los menús del cliente y proveedor serán como se muestran a continuación 
+
+
+#### Menu Cliente / Proveedor
+##### Menu Modelos
+| Modelos            
+| :--------- 
+| 1. Zapato         
+| 2. Bota       
+| 3. Sandalia
+| 4. Tenis
+
+
+##### Menu Colores
+| Colores            
+| :--------- 
+| 1. Azul         
+| 2. Negro       
+| 3. Café
+| 4. Tenis
+
+
+##### Menu Tallas
+| Tallas            
+| :--------- 
+| 24         
+| 25       
+| 26
+| 27
+
+Al final de la compra, el usuario verá en pantalla el monto de venta total, que será el resultado de la multiplicacion de escalares correspondiente a la cantidad de pares de zapatos por el costo del modelo correspondiente.
+
+
+
+#### Costo del Modelo 
+**Modelo**    | Zapato   | Bota   | Sandalia   | Tenis       
+------------- | :-------:| :-----:| :--------: | :-----:
+**Costo**     | \$250    | \$360  |    \$570   | \$670 
+
+
+
+
+Finalmente al seleccionar la opción de administrador se desplegará en pantalla los productos en inventario. De esta manera se corroborará si se llevaron a cabo las operaciones de suma y resta en las matrices que contienen a los modelos de los productos. 
+
+
+>**Resultados**
+
+El código final para el inventario dinámico (ver apéndice 1) se contruyó con 161 líneas de código. Donde se incluyen las clases y funciones para cada producto del inventario. Los comandos se ejecutan sin errores en las matrices. 
+
+Una vez ejecutado el programa se llevaron a cabo las una serie de compras e ingresos de diferentes productos para corroborar que los resultaados de las matrices fueran correctos. Un ejemplo de las acciones que se ejecutaron se muestran a continuación: 
+
+
+###### I. Opción "Cliente".
+|              |
+|------------- | :-------:
+|**Modelo**    | Zapato         
+|**Talla**     | 24       
+|**Color**     | Azul     
+|**Cantidad**  | 3        
+
+
+###### II. Opción "Administrador". 
+
+
+###### III. Opción "Cliente". 
+|              |
+|------------- | :-------:
+|**Modelo**    | Bota         
+|**Talla**     | 25       
+|**Color**     | Negro     
+|**Cantidad**  | 4   
+
+
+###### IV. Opción "Administrador".
+
+
+###### V. Opción "Proveedor". 
+|              |
+|------------- | :-------:
+|**Modelo**    | Sandalias         
+|**Talla**     | 26       
+|**Color**     | Cafe     
+|**Cantidad**  | 5 
+
+
+###### VI. Opción "Administrador". 
+
+
+###### VII. Opción "Proveedor". 
+|              |
+|------------- | :-------:
+|**Modelo**    | Tenis         
+|**Talla**     | 27       
+|**Color**     | Negro     
+|**Cantidad**  | 13  
+
+
+###### VIII. Opción "Administrador".  
+
+Se presentan algunos de los resultados obtenidos en la consola (ver apendice 2) al ingresar opciones de compra e ingreso de productos al inventario en el programa. Así mismo se muestra el inventario después de cada operación. De esta manera se comprueba que el código funciona correctamente y que las operaciones se llevan a cabo.
+
+Para consultar el código final y la liga de acceso en "Google Colab" para su ejecución, dirigirse al apéndice 1.   
+  
+
+>**Conclusion**
+
+El algoritmo desarrollado permite modificar el inventario inicial de productos, así mismo llevaba a cabo las operaciones de suma y resta al ingresar opciones de compra cuando se añaden productos en la opción de proovedor. También se lleva a cabo la multiplicacion de escalares que se ve reflejada en el monto total de compra impreso en la pantalla como "Factura". 
+
+Este algoritmo puede ser modificado para inventariar otros produtos diferentes a zapatos, unicamente cambiando las variables de las clases por las que se desean. 
+
+Se pueden llevar a cabo mejoras al programa en un futuro, como que los cambios efectuados en el inventario se guarden una vez cerrado el programa. Esto requeriría de la creación y modificación de registros, por día, por ejemplo. Así se podria obtener un histrórico de ventas y un balance por mes o año de la compañia.
+
+
+
+>**Referencias Bibliográficas**
+ 
+ - Lay, David C.(2007). "Álgebra Lineal y sus aplicaciones", Ed. Perason Education, 2da Edicion, México. Capítulo 2.  
+ - Grossman, Stanley I. (2012)."Álgebra Lineal". Ed. Mc Graw Hil, 7ma Edición, México. Capítulo 2
+
+>**Ápendice 1. Código**
+
+Nota. Para ejecutar lo código, la contraseña en la opción "Provedor" es "proveedor" y la contraseña para la opción "Administrador" es "53424".
+
+Código ejecutable en la siguiente liga: <https://colab.research.google.com/drive/1hZ3ZEyyXGe5dwv0EWR4-TnFJsLe8YaL5?authuser=2#scrollTo=R--KObK059Id&line=1&uniqifier=1> 
+
+
+#### Código escrito: 
+
+    import numpy as np
+
+    class invent_dinamico(): #clases del inventario
+     def __init__(self):
+      	
+    		self.talla_opt = {24: 0, 25: 1, 26: 2, 27: 3, 28: 4}
+    		self.tipo_tall = {0: 24, 1: 25, 2: 26, 3: 27, 4: 28}
+    		self.precio_modelo = {1: 250, 2: 360, 3: 570, 4: 670}
+    		self.tipo_modelo = {1: "Zapato", 2: "Bota", 3: "Sandalias", 4: "Tenis"}
+    		self.tipo_color = {1: "Azul", 2: "Negro", 3: "Cafe"}
+    		self.__modelos = {}
+    		self.main()
+    
+    
+    	def menu_modelo(self):
+    		print("\n Modelos disponibles. Seleccione la opcion que desee:")
+    		print("1. Zapato")
+    		print("2. Bota")
+    		print("3. Sandalias")
+    		`print("4. Tenis")
+    
+    	def menu_colores(self):
+    		print("\n Colores disponibles. Seleccione la opcion que desee: ")
+    		print("1.- Azul \n")
+    		print("2.- Negro \n")
+    		print("3.- Cafe \n")
+    
+    	def menu_tallas(self):`
+    		print("\n Tallas disponibles. Seleccione la opcion que desee:")
+    		print("24")
+    		print("25")
+    		print("26")
+    		print("27")
+    		print("28")
+    
+    
+    	def menu_admin(self):
+    		print("*************************Menu Administrador*************************")
+    		print("1.- Inventario. Productos en existencias")
+    		print("2.- Salir")
+    
+    	def orden_cliente(self):
+    
+    		print("****************************** Modelo ******************************")
+    		print("Ingrese el modelo que desea adquirir:")
+    		self.menu_modelo()
+    		modelo = int(input())
+    		print("****************************** Talla ******************************")
+    		self.menu_tallas()
+    		print("Ingrese la talla que desea adquirir:")
+    		talla = int(input())
+    		sel = self.talla_opt.get(talla)
+    		self.menu_colores()
+    		print("Ingrese el color:")
+    		color = int(input())
+    		print("Ingrese cantidad: \n")
+    		print("Disponible: ", self.__modelos[modelo][sel][color - 1])
+    		cantidad = int(input())
+    		if (self.__modelos[modelo][sel][color - 1]>=cantidad):
+    			self.__modelos[modelo][sel][color - 1] = self.__modelos[modelo][sel][color - 1]-cantidad
+    			print("\nFactura:")
+    			print("Modelo\t|Talla\t|Color\tCantidad")
+    			print(self.tipo_modelo[modelo], "\t|", talla, "\t|", self.tipo_color[color], "\t|", cantidad)
+    			`print("Total: $", round(self.precio_modelo[modelo] * cantidad, 2))
+    		else:
+    			print("No hay suficiente inventario para su orden")
+    		print("\n\n")
+    
+    	def menu_proveedor(self):
+    		ti = "0"
+    		while (ti=="0"):
+    			print("****************************** Modelo ******************************")
+    			print("Ingrese el modelo a proveer:")
+    			self.menu_modelo()
+    			`modelo = int(input())
+    			print("Ingrese talla del modelo:")
+    			self.menu_tallas()
+    			talla = int(input())
+    			sel_talla = self.talla_opt[talla]
+    			self.menu_colores()
+    			print("Ingrese color del modelo:")
+    			color = int(input())
+    			print("Ingrese la cantidad:")
+    			cantidad = int(input())
+    
+    			self.__modelos[modelo][sel_talla][color - 1] = self.__modelos[modelo][sel_talla][color - 1]+cantidad
+    			print("\nRecibo de ingreso:")
+    			print("Modelo\t|Talla\t|Color\tCantidad")
+    			print(self.tipo_modelo[modelo], "\t|", talla, "\t|", self.tipo_color[color], "\t|", cantidad)
+    			print("De dos a tres dias uno de nuestros representantes realizara el pago.")
+    			print("\n\n")`
+    			print("Si desea igresar otro articulo de este modelo ingrese 0, de lo contrario ingrese otro numero")
+    
+    			ti = str(input())
+    
+    	def administrador(self):
+    		#print("Que opcion desea llevar a cabo? \n")
+    		#self.menu_admin()
+    		#option = int(input())
+    		#if(option==1):
+    
+    		for modelo, cantidad in self.__modelos.items():
+    			print("\n>> Modelo:", self.tipo_modelo[modelo])
+    			print("Cantidad:")
+    			print("Talla \t\t| Azul \t\t| Negro \t\t| Cafe")
+    			for index, talla in enumerate(cantidad):
+    				disponibles = str(self.tipo_tall[index]) + "\t\t|"
+    				for color in talla:
+    					disponibles += str(color) + "\t\t|"
+    				print(disponibles)
+    		print("\n\n")
+    
+    	def main(self): #funcion principal del programa
+    
+    		contrasena = ""
+    		mod = np.empty([5, 3])
+    		for i in range(5):
+    			for j in range(3):
+    				mod[i][j] = 5
+    		self.__modelos = {1: mod.copy(), 2: mod.copy(), 3: mod.copy(), 4: mod.copy()}
+    		# print(self.__modelos)
+    		opcion = ""
+    		contprov = ""
+    		while True:
+    			print("\t Menu Principal")
+    			print("\t 1. Cliente")
+    			print("\t 2. Proveedor")
+    			print("\t 3. Administrador")
+    			print("\t 4. Salir")
+    			print("\t Por favor ingrese una opcion:")
+    			opcion = input()
+    			if opcion == "4":
+    				print("Gracias por su visita.")
+    				break
+    			elif opcion == "1":
+    				self.orden_cliente()
+    			elif opcion == "2":
+    				print("\n Ingrese la contrasena del prooveedor: \t")
+    				contprov = input()
+    				if (contprov == 'proveedor'):
+    					self.menu_provedor()
+    				else:
+    					print("La contrasena es incorrecta")
+    			elif opcion == "3":
+    				print("\n Ingrese la contrasena del administrador: \t")
+    				contrasena = int(input())
+    				if (contrasena == 53424):
+    					self.administrador()
+    			else:
+    				print("[Error] Intente nuevamente.")
+    
+    
+    if __name__ == '__main__':
+    	invent_dinamico()
+	
+>**Ápendice 2. Resulados de la consola. **
+
+A continuación se presentan algunos de los resultados obtenidos al ingresar opciones de compra e ingreso de productos al inventario en el programa. Así mismo se muestra el inventario después de cada operación. De esta manera se comprueba que el código funciona correctamente y que las operaciones se llevan a cabo.
+
+
+![I. Opción "Cliente". Detalle de primer pedido.](C:\Users\ale_p\OneDrive\Imágenes\Proyecto_Algebra\pa_1.png){width=40%}  
+
+![II. Opción "Administrador". Inventario. Matrices después de la primera compra.](C:\Users\ale_p\OneDrive\Imágenes\Proyecto_Algebra\pa_2.png){width=40%}
+
+![III. Opcion "Cliente". Detalle de segundo pedido.](C:\Users\ale_p\OneDrive\Imágenes\Proyecto_Algebra\pa_3.png){width=40%}  
+
+![IV. Opcion "Administrador". Inventario. Matrices después de la segunda compra.](C:\Users\ale_p\OneDrive\Imágenes\Proyecto_Algebra\pa_4.png){width=40%}  
+
+![V. Opcion "Proveedor". Detalle del primer ingreso de producto.](C:\Users\ale_p\OneDrive\Imágenes\Proyecto_Algebra\pa_5.png){width=40%}  
+
+![VI. Opcion "Administrador". Inventario. Matrices después del primer ingreso de producto.](C:\Users\ale_p\OneDrive\Imágenes\Proyecto_Algebra\pa_6.png){width=40%}  
+  
+![VII. Opcion "Proveedor". Detalle del segundo ingreso de producto.](C:\Users\ale_p\OneDrive\Imágenes\Proyecto_Algebra\pa_7.png){width=40%} 
+
+
+![VIII. Opcion "Administrador". Inventario. Matrices después del segundo ingreso de producto.](C:\Users\ale_p\OneDrive\Imágenes\Proyecto_Algebra\pa_8.png){width=40%}  
